@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple AI Chatbot and Code Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css"
+    />
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <p class="eyebrow">Simple AI Studio</p>
+          <h1>Chatbot + Code Generator</h1>
+          <p class="sidebar-description">
+            A beginner-friendly app for chatting with AI and generating code.
+          </p>
+          <button id="newChatButton" class="secondary-button">New chat</button>
+        </div>
+
+        <div class="mode-switch" aria-label="Mode switch">
+          <button id="chatModeButton" class="mode-button active" type="button">Chat</button>
+          <button id="codeModeButton" class="mode-button" type="button">Code</button>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="section-label">History</p>
+          <div id="sidebarList" class="session-list"></div>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow" id="sessionSubtitle">Ready to help</p>
+            <h2 id="sessionTitle">AI Chat Assistant</h2>
+          </div>
+          <div class="status-pill" id="statusText">Online</div>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite"></section>
+
+        <form id="composerForm" class="composer">
+          <label class="sr-only" for="promptInput">Message</label>
+          <textarea
+            id="promptInput"
+            rows="3"
+            placeholder="Ask a question or request code..."
+          ></textarea>
+          <div class="composer-footer">
+            <p class="hint">Press Enter to send. Use Shift+Enter for a new line.</p>
+            <button type="submit" class="primary-button">Send</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
